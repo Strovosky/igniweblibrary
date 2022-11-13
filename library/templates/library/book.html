@@ -1,0 +1,23 @@
+{% extends 'library/base_template.html' %}
+
+{% block title %}Book{% endblock title %}
+
+{% block content %}
+<b>Book Title: </b>
+<p>{{book.title}}</p>
+
+<b>Author: </b>
+<p>{{book.author}}</p>
+
+<hr>
+
+<b>Description: </b>
+<p>{{book.description}}</p>
+<img src="{{book.default_pic.url}}" alt="Book Picture" width="100" height="100">
+
+<hr>
+
+{% endblock content %}
+
+
+

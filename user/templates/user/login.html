@@ -1,0 +1,12 @@
+{% extends "library/base_template.html" %}
+
+{% block title %}Login{% endblock title %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Sign In</button>
+    </form>
+{% endblock content %}
+

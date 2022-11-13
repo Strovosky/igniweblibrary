@@ -1,0 +1,35 @@
+{% extends 'library/base_template.html' %}
+
+{% block title %}Profile{% endblock title %}
+
+
+{% block content %}
+<b>My name is {{user.full_name}}</b>
+<p></p>
+<b>Reserves total {{user.books.count}}</b>
+<br>
+<img src="{{ user.profile_pic.url }}" alt="Profile Image" width="100" height="100">
+
+<table>
+    <caption>My Reserves</caption>
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Action</th>
+    </tr>
+    {% for book in user.books.all %}
+    <tr>
+        <td>{{book.title}}</td>
+        <td>{{book.author}}</td>
+        <td><a href="{% url 'delete_reserve' user.id book.id %}">delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock content %}
+
+
+
+
+
+
+
